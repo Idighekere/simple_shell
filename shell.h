@@ -3,6 +3,11 @@
 
 #include <stddef.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/wait.h>
 
 /**
  * struct shell_list_p - singly linked lists
