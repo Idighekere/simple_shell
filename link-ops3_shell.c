@@ -47,9 +47,9 @@ shell_list_t *__add_node(shell_list_t **head, void *ptr)
  */
 shell_list_t *__add_node_end(shell_list_t **head, void *ptr)
 {
-	list_t *new = NULL, *last = NULL;
+	shell_list_t *new = NULL, *last = NULL;
 
-	new = malloc(sizeof(list_t));
+	new = malloc(sizeof(shell_list_t));
 	if (!new)
 	{
 		return (NULL);
