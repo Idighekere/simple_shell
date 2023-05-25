@@ -25,9 +25,9 @@ size_t __list_len(shell_list_t *h)
  */
 shell_list_t *__add_node(shell_list_t **head, void *ptr)
 {
-	list_t *new = NULL;
+	shell_list_t *new = NULL;
 
-	new = malloc(sizeof(list_t));
+	new = malloc(sizeof(shell_list_t));
 	if (!new)
 	{
 		return (NULL);
