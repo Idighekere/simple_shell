@@ -37,13 +37,13 @@ shell_list_t *__get_node_at_index(shell_list_t *head, unsigned int index)
 }
 
 /**
- * __insert_node - inserts a new node at a given position
+ * _insert_node - inserts a new node at a given position
  * @head: pointer to the beginning of linked list
  * @idx: index where to insert
  * @ptr: value for ptr
  * Return: address of new node or NULL if fails
  */
-shell_list_t *__insert_node(shell_list_t **head, unsigned int idx, void *ptr)
+shell_list_t *_insert_node(shell_list_t **head, unsigned int idx, void *ptr)
 {
 	shell_list_t *new = NULL, *hold = *head;
 	unsigned int i = 0;
