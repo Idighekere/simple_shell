@@ -31,7 +31,7 @@ ssize_t else_handle_input(char *lineptr, int stream, char *input, int filled)
 	{
 		rd = read(stream, input + filled, 4096 - filled);
 
-		if (rd < (4096 - filled)
+		if (rd < (4096 - filled))
 			input[filled + rd] = '\n';
 		filled = filled + rd + 1;
 		return (_getline(lineptr, stream));
@@ -49,7 +49,7 @@ ssize_t _getline(char *lineptr, int stream)
 {
 	static char input[4096];
 	static int filled;
-	int new-line_index = -1, a = 0, rd = 0;
+	int newline_index = -1, a = 0, rd = 0;
 	ssize_t ret = 0;
 
 	/* if the buffer is empty, then fill it*/
@@ -65,19 +65,19 @@ ssize_t _getline(char *lineptr, int stream)
 	}
 
 	/* if thwwe buffer contains a newline or EOF */
-	new-line_index = has_newline(input);
-	if (new-line_index != -1)
+	newline_index = has_newline(input);
+	if (newline_index != -1)
 	{
-		while (a <= new-line_index)
+		while (a <= newline_index)
 		{
 			lineptr[a] = input[a];
 			a++;
 		}
-		ret = new-line_index;
+		ret = newline_index;
 		if (input[ret] == '\n')
 			ret = ret + 1;
 		/* shift any remaining chars to the left */
-		shiftbuffer(input, new-line_index + 1, filled);
+		shiftbuffer(input, newline_index + 1, filled);
 		filled = filled - ret;
 		return (ret);
 	}

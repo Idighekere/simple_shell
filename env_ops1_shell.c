@@ -20,14 +20,14 @@ char **do_env(char *add, char *delete)
 		return (NULL);
 	}
 	if (add)
-		add_node_end(&my_env, add);
+		add__node_end(&my_env, add);
 	else if (delete)
 	{
 		len = list_len(my_env);
 		for (ab = 0; ab < len; ab++)
 		{
 			cd = 0;
-			temp = get_node_at_index(my_env, ab)->ptr;
+			tmp = get_node_at_index(my_env, ab)->ptr;
 			do {
 				if (delete[cd] != tmp[cd])
 					break;

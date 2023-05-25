@@ -25,7 +25,7 @@ char *read_textfile(char *filename)
 	}
 
 	/* read file up to size of the buffer 4096*/
-	l_Reaad = read(open_file, buffer, 4096);
+	l_Read = read(open_file, buffer, 4096);
 	if (l_Read < 1)
 	{
 		do_mem(0, buffer);

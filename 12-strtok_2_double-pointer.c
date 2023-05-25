@@ -32,7 +32,7 @@ char **_strtok(char *str, char *delim)
 		return (NULL);
 	list = do_mem((counter + 1) * sizeof(char *), NULL);
 	if (list)
-		return (NUL);
+		return (NULL);
 
 	/* tokenize str to individaul words inside a double ptr */
 	for (p = 0, len = 0, counter = 0; str[p] || len;)

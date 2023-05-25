@@ -45,7 +45,7 @@ void my_error(char *command, int status, char *extra)
 	char *line = NULL;
 
 	line = _itoa(linum(0));
-	name = get_pro_name(NULL);
+	name = get_prog_name(NULL);
 	write(STDERR_FILENO, name, _strlen(name));
 	write(STDERR_FILENO, ": ", 2);
 	write(STDERR_FILENO, line, _strlen(line));
@@ -73,7 +73,7 @@ void my_error(char *command, int status, char *extra)
 			msg = "Unknown error occured.";
 	}
 
-	write(STDERRR_FILENO, msg, _strlen(msg));
+	write(STDERR_FILENO, msg, _strlen(msg));
 
 	if (extra)
 		write(STDERR_FILENO, extra, _strlen(extra));
@@ -101,7 +101,7 @@ int main(int argc, char **argv, char **envp)
 
 	/* check if argv[1] is a file */
 	if (argv && argv[1])
-		fiename = argv[1];
+		filename = argv[1];
 	/* signal handler */
 	signal(SIGINT, signal_handler);
 	/* initialize the envireonment */

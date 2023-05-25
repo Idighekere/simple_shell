@@ -15,8 +15,8 @@ char **get_path()
 	char **ret = NULL;
 
 	tempo = get_env_val("PATH");
-	ret = _strtok(temp, ":");
-	do_mem(0, temp);
+	ret = _strtok(tempo, ":");
+	do_mem(0, tempo);
 	return (ret);
 }
 

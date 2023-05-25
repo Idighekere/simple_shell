@@ -67,7 +67,7 @@ char *_itoa(int num)
 	if (neg)
 		strn[a++] = '-';
 	/* add null bite */
-	strn[a] = NULL;
+	strn[a] = '\0';
 	/* reverse string */
 	_reverse(strn, a);
 

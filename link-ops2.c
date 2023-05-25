@@ -37,9 +37,9 @@ shell_list_s *listify(char **arr)
 
 	while (arr[index])
 	{
-		tmp = do_mem(sizeof(char) * (_strlen(arr[index] + 1), NULL);
+		tmp = do_mem(sizeof(char) * (_strlen(arr[index]) + 1), NULL);
 		tmp = _strcat(tmp, arr[index]);
-		add_node_end(&ret, tmp);
+		add__node_end(&ret, tmp);
 		index++;
 	}
 	return (ret);

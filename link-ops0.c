@@ -91,7 +91,7 @@ void free_list(shell_list_s *head)
 
 	while (head != NULL)
 	{
-		hold_list == head;
+		hold_list = head;
 		head = head->next;
 		do_mem(0, hold_list);
 	}

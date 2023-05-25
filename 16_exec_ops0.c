@@ -32,7 +32,7 @@ int exec_builtin(char **tokens, int bcase)
 		break;
 	}
 	case 2:
-		return (cd_builtin(tokens));
+		return (cd_built(tokens));
 	case 3:
 		return (env_builtin());
 	case 4:
