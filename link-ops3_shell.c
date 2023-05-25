@@ -7,7 +7,7 @@
  * @h: struct list_t, first node
  * Return: number of nodes
  */
-size_t __list_len(list_t *h)
+size_t __list_len(shell_list_t *h)
 {
 	int i = 0;
 
@@ -23,7 +23,7 @@ size_t __list_len(list_t *h)
  * @ptr: the pointer data
  * Return: new list_t
  */
-list_t *__add_node(list_t **head, void *ptr)
+shell_list_t *__add_node(shell_list_t **head, void *ptr)
 {
 	list_t *new = NULL;
 
@@ -45,7 +45,7 @@ list_t *__add_node(list_t **head, void *ptr)
  * @ptr: the pointer data
  * Return: new list_t
  */
-list_t *__add_node_end(list_t **head, void *ptr)
+shell_list_t *__add_node_end(shell_list_t **head, void *ptr)
 {
 	list_t *new = NULL, *last = NULL;
 
@@ -75,9 +75,9 @@ list_t *__add_node_end(list_t **head, void *ptr)
  * __free_list - frees list_t
  * @head: linked list , list_t
  */
-void __free_list(list_t *head)
+void __free_list(shell_list_t *head)
 {
-	list_t *hold = NULL;
+	shell_list_t *hold = NULL;
 
 	while (head != NULL)
 	{
