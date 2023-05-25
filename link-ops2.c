@@ -58,6 +58,6 @@ void free_double_array(char **list)
 		return;
 
 	for (abc = 0; list[abc] != NULL; abc++)
-		do_mem(0, list[abc]);
-	do_mem(0, list);
+		free(list[abc]);
+	free(list);
 }
