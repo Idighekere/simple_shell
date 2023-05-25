@@ -39,7 +39,11 @@ shell_list_s *listify(char **arr)
 	{
 		tmp = do_mem(sizeof(char) * (_strlen(arr[index]) + 1), NULL);
 		tmp = _strcat(tmp, arr[index]);
+<<<<<<< HEAD
 		add_node_end(&ret, tmp);
+=======
+		add__node_end(&ret, tmp);
+>>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 		index++;
 	}
 	return (ret);

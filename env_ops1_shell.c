@@ -20,7 +20,11 @@ char **do_env(char *add, char *delete)
 		return (NULL);
 	}
 	if (add)
+<<<<<<< HEAD
 		add_node_end(&my_env, add);
+=======
+		add__node_end(&my_env, add);
+>>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 	else if (delete)
 	{
 		len = list_len(my_env);
