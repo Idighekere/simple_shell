@@ -73,11 +73,8 @@ ssize_t _getline(char *lineptr, int stream)
 	newline_index = has_newline(input);
 	if (newline_index != -1)
 	{
-		while (a <= newline_index)
-		{
+		for (a = 0; a <= newline_index; a++)
 			lineptr[a] = input[a];
-			a++;
-		}
 		ret = newline_index;
 		if (input[ret] == '\n')
 			ret = ret + 1;
@@ -88,6 +85,6 @@ ssize_t _getline(char *lineptr, int stream)
 	}
 	/* if the buffer doesn't contain a new line or EOF */
 	else
-	else_handle_input(lineptr, stream, input, filled);
+		else_handle_input(lineptr, stream, input, filled);
 	return (-1);
 }
