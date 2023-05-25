@@ -8,7 +8,7 @@
  */
 void free_list_full(shell_list_s *head)
 {
-	list_s *hold = NULL;
+	shell_list_s *hold = NULL;
 
 	while (head != NULL)
 	{
