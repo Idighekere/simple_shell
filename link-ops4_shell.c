@@ -6,9 +6,9 @@
  * __free_list_full - frees list_t and all contained pointers
  * @head: linked list , list_t
  */
-void __free_list_full(list_t *head)
+void __free_list_full(shell_list_t *head)
 {
-	list_t *hold = NULL;
+	shell_list_t *hold = NULL;
 
 	while (head != NULL)
 	{
@@ -26,7 +26,7 @@ void __free_list_full(list_t *head)
  * @index: index
  * Return: the nth node
  */
-list_t *__get_node_at_index(list_t *head, unsigned int index)
+shell_list_t *__get_node_at_index(shell_list_t *head, unsigned int index)
 {
 	unsigned int i = 0;
 
@@ -37,20 +37,20 @@ list_t *__get_node_at_index(list_t *head, unsigned int index)
 }
 
 /**
- * __insert_node_at_index - inserts a new node at a given position
+ * __insert_node - inserts a new node at a given position
  * @head: pointer to the beginning of linked list
  * @idx: index where to insert
  * @ptr: value for ptr
  * Return: address of new node or NULL if fails
  */
-list_t *__insert_node_at_index(list_t **head, unsigned int idx, void *ptr)
+shell_list_t *__insert_node(shell_list_t **head, unsigned int idx, void *ptr)
 {
-	list_t *new = NULL, *hold = *head;
+	shell_list_t *new = NULL, *hold = *head;
 	unsigned int i = 0;
 
 	if (!idx)
 	{
-		new = malloc(sizeof(list_t));
+		new = malloc(sizeof(shell_list_t));
 		if (!new)
 			return (NULL);
 
@@ -66,7 +66,7 @@ list_t *__insert_node_at_index(list_t **head, unsigned int idx, void *ptr)
 	{
 		if (i == (idx - 1))
 		{
-			new = malloc(sizeof(list_t));
+			new = malloc(sizeof(shell_list_t));
 			if (!new)
 				return (NULL);
 			(*new).ptr = ptr;
@@ -86,9 +86,9 @@ list_t *__insert_node_at_index(list_t **head, unsigned int idx, void *ptr)
  * @index: index to be deleted
  * Return: 1 if succesful -1 if fails
  */
-int __delete_node_at_index(list_t **head, unsigned int index)
+int __delete_node_at_index(shell_list_t **head, unsigned int index)
 {
-	list_t *hold = NULL, *delete = NULL;
+	shell_list_t *hold = NULL, *delete = NULL;
 	unsigned int i = 0, action = 0;
 
 	if (!*head)
