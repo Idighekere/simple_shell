@@ -25,7 +25,7 @@ void free_list_full(shell_list_s *head)
  * @index: index
  * Return: the nth node
  */
-shell_ist_s *get_node_at_index(shell_list_s *head, unsigned int index)
+shell_list_s *get_node_at_index(shell_list_s *head, unsigned int index)
 {
 	unsigned int i = 0;
 
@@ -87,7 +87,7 @@ shell_list_s *insert_node(shell_list_s **head, unsigned int ide, char *ptr)
  */
 int delete_node_at_index(shell_list_s **head, unsigned int index)
 {
-	list_s *hold = NULL, *delete = NULL;
+	shell_list_s *hold = NULL, *delete = NULL;
 	unsigned int i = 0, action = 0;
 
 	if (!*head)
