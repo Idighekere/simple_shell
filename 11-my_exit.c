@@ -21,11 +21,8 @@ void *do_mem(size_t size, void *ptr)
 		ret = malloc(size);
 		if (!ret)
 			do_exit(2, "malloc failed", EXIT_FAILURE);
-		while ((unsigned int)d < size)
-		{
+		for (d = 0; (unsigned int)d < size; d++)
 			((char *)ret)[d] = 0;
-			 d++;
-		}
 		__add_node_end(&all, ret);
 		return (ret);
 	}

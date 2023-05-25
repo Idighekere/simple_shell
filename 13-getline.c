@@ -1,4 +1,7 @@
 #include "shell.h"
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 /**
  * else_handle_input - if buffer does not include \n or EOF
@@ -19,10 +22,11 @@ ssize_t else_handle_input(char *lineptr, int stream, char *input, int filled)
 	{
 		/* it should always fill buffer with EOF or \n at end */
 		rd = 1;
-		do {
+		while (rd && hd != '\n')
+		{
 			hd = 0;
 			rd = read(stream, &hd, 1);
-		} while (rd && hd != '\n');
+		}
 		input[4095] = '\n';
 		return (_getline(lineptr, stream));
 	}
@@ -55,10 +59,11 @@ ssize_t _getline(char *lineptr, int stream)
 	/* if the buffer is empty, then fill it*/
 	if (!filled)
 	{
-		do {
+		while ((rd = read(stream, input, 4096)) < 0)
+		{
 			perror("Read Error\n");
 			return (-1);
-		} while ((rd = read(stream, input, 4096)) < 0);
+		}
 		filled = rd;
 		if (!rd)
 			return (0);

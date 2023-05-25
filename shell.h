@@ -41,12 +41,7 @@ shell_list_t *__add_node(shell_list_t **head, void *ptr);
 shell_list_t *__add_node_end(shell_list_t **head, void *ptr);
 void __free_list(shell_list_t *head);
 void __free_list_full(shell_list_t *head);
-<<<<<<< HEAD
 shell_list_t *_insert_node(shell_list_t **head, unsigned int idx, void *ptr);
-=======
-shell_list_t *__insert_node_at_index(shell_list_t *head, unsigned int idx,
-	void *ptr);
->>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 shell_list_t *__get_node_at_index(shell_list_t *head, unsigned int index);
 int __delete_node_at_index(shell_list_t **head, unsigned int index);
 
@@ -70,21 +65,13 @@ typedef struct shell_list_p2
 /* Below find th elined list functions */
 
 size_t list_len(shell_list_s *h);
-<<<<<<< HEAD
 shell_list_s *add_node_end(shell_list_s **head, char *ptr);
-=======
-shell_list_s *add__node_end(shell_list_s **head, char *ptr);
->>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 shell_list_s *add_node(shell_list_s **head, char *ptr);
 void free_list(shell_list_s *head);
 void free_list_full(shell_list_s *head);
 shell_list_s *get_node_at_index(shell_list_s *head,
 unsigned int index);
-<<<<<<< HEAD
 shell_list_s *insert_node(shell_list_s **head, unsigned int ide,
-=======
-shell_list_s *insert_node_at_index(shell_list_s **head, unsigned int idx,
->>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 char *ptr);
 char **arrayify(shell_list_s *);
 int delete_node_at_index(shell_list_s **head, unsigned int index);
@@ -130,11 +117,7 @@ char *get_full_command(char *path, char *command);
 /* builtin functions */
 int setenv_builtin(char **tokens);
 int unsetenv_builtin(char **tokens);
-<<<<<<< HEAD
 int cd_builtin(char **tokens);
-=======
-int cd_built(char **tokens);
->>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 char **get_builtins();
 int env_builtin(void);
 

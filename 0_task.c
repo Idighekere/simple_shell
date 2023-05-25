@@ -29,7 +29,7 @@ int linum(int add)
 {
 	static int line_number;
 
-	line_number = line_number + add;
+	line_number += add;
 	return (line_number);
 }
 /**

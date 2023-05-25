@@ -35,11 +35,12 @@ char *get_env_val(char *name)
 	while (env[a])
 	{
 		b = 0;
-		do {
+		while (env[a][b] && name[b])
+		{
 			if (env[a][b] != name[b])
 				break;
 			b++;
-		} while (env[a][b] && name[b]);
+		}
 		/* b only counts until null byte if name matches */
 		if (name[b] == '\0' && env[a][b] == '=')
 		{

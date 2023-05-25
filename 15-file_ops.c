@@ -1,9 +1,6 @@
 #include "shell.h"
-<<<<<<< HEAD
 #include <fcntl.h>
 #include <stdlib.h>
-=======
->>>>>>> 8b6330287104ef2f90cb19006a375dcdf1f10803
 
 /**
  * read_textfile - it reads a file and returns string of what it reads
