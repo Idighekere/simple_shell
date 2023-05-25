@@ -66,6 +66,5 @@ void do_exit(int fd, char *msg, int code)
 	/* nuke extra memory */
 	do_mem(0, NULL);
 
-	/* exit with code */
 	exit(code);
 }

@@ -12,14 +12,14 @@ char *_reverse(char *str, int n)
 {
 	char *_start = str;
 	char *_end;
-	char temp;
+	char tempo;
 
 	_end = str + n - 1;
 	for (; _start < _end; _start++, _end--)
 	{
-		temp = *_end;
-		*_start = *_end;
-		*_start = temp;
+		tempo = *_end;
+		*_end = *_start;
+		*_start = tempo;
 	}
 	return (str);
 }

@@ -41,7 +41,7 @@ char **_strtok(char *str, char *delim)
 		{
 			if (((str[p] == delim[r]) || (!str[p])))
 			{
-				p = p + 1;
+				a = a + 1;
 				if (len)
 				{
 					list[counter] = do_mem(sizeof(char) * (len + 1), NULL);

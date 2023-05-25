@@ -29,7 +29,7 @@ char *get_env_val(char *name)
 {
 	int a = 0, b = 0;
 	char **env = NULL;
-	char *res = NULL;
+	char *rest = NULL;
 
 	env = get_env();
 	while (env[a])
@@ -46,10 +46,10 @@ char *get_env_val(char *name)
 		{
 			if (!env[a][b + 1])
 				return (NULL);
-			res = do_mem((_strlen((env[a]) + b + 1) + 1), NULL);
-			_strcpy(res, ((env[a]) + b + 1));
+			rest = do_mem((_strlen((env[a]) + b + 1) + 1), NULL);
+			_strcpy(rest, ((env[a]) + b + 1));
 			free_double_array(env);
-			return (res);
+			return (rest);
 		}
 		a++;
 	}
@@ -115,7 +115,7 @@ char **get_env(void)
 char *get_full_command(char *path, char *command)
 {
 	int a = 0, b = 0;
-	char *res = NULL;
+	char *rest = NULL;
 	char **temp_split = NULL;
 
 	/* if command has any / in it, then return command */
@@ -130,9 +130,9 @@ char *get_full_command(char *path, char *command)
 	/* else, concat the path with the command and a slash */
 	a = _strlen(path);
 	b = _strlen(command);
-	res = do_mem(sizeof(char) * (a + b + 1 + 1), NULL);
-	_strcat(res, path);
-	_strcat(res, "/");
-	_strcat(res, command);
-	return (res);
+	rest = do_mem(sizeof(char) * (a + b + 1 + 1), NULL);
+	_strcat(rest, path);
+	_strcat(rest, "/");
+	_strcat(rest, command);
+	return (rest);
 }
